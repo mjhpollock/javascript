@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js input using html form</title>
+</head>
+<body>
+    <div id="main" style="height: 200px; width: 20%;margin: auto;">
+        <form id="from1" action="" >
+            Enter your first name: <input type = "text" id="firstname"> <br>
+            <br>
+            Enter your last name: <input type="text" id="lastname"><br>
+            <br>
+            <input type="button" onclick="fullName()" value="Submit">
+        </form>
+        <p id="show"></p>
+    </div>
+    <script>
+        function fullName(){
+            let fname = document.getElementById("firstname").value;
+            let lname = document.getElementById("lastname").value;
+            let fullname = fname + " " +lname;
+            document.getElementById("show").innerHTML = "your full name is:" + fullname;
+        }
+    </script>
+</body>
+</html>
