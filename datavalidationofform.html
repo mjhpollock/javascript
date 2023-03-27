@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Type Validation</title>
+</head>
+<body>
+    <div class="main" style="width: 30%;height: 300px; margin: auto;">
+        <h1> Data type validation</h1>
+    <p>
+        Please enter a number between 50 to 80
+    </p>
+        <input id="inputNumber">
+        <button onclick="numberValidation()">Submit</button> 
+
+    <p id="demo"></p>
+    </div>
+    <script>
+        function numberValidation(){
+            let text="";
+            let numInput = document.getElementById("inputNumber").value;
+            if(isNaN(numInput) || numInput>80 || numInput<50  ){
+                text = "Input is not Valid";
+                document.getElementById("demo").innerHTML = text;
+            }
+            else{
+                text = "successfull";
+                document.getElementById("demo").innerHTML = text;
+            }
+        }
+
+    </script>
+    
+</body>
+</html>
