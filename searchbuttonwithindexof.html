@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            list-style-type: none;
+        }
+        li {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="search" onkeyup="searchFunction()" placeholder="search any name">
+    <ul id="nameList">
+        <li><a href="#">polok</a></li>
+        <li><a href="#">nasir</a></li>
+        <li><a href="#">biplob</a></li>
+        <li><a href="#">kabir</a></li>
+        <li><a href="#">hasan</a></li>
+        <li><a href="#">shishir</a></li>
+        <li><a href="#">shajib</a></li>
+    </ul>
+    <script>
+        function searchFunction(){
+            var input, ul, li, a, match,i,j;
+            input = document.getElementById("search");
+            match = input.value;
+            ul = document.getElementById("nameList");
+            li = ul.getElementsByTagName("li");
+            for(i=0; i<li.length; i++){
+                a = li[i].getElementsByTagName("a");
+                    if(a[0].innerText.indexOf(match)> -1){
+                    li[i].style.display = "";
+                }
+                else{
+                    li[i].style.display = "none";
+                }
+            }
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .para {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button class="person" onclick="showPerson('polok')">person 1</button>
+    <button class="person" onclick="showPerson('nasir')">person 2</button>
+    <button class="person" onclick="showPerson('shishir')">person 3</button>
+    <p id="polok" class="para">
+        Name: Polok <br>
+        Age: 26
+    </p>
+    <p id="nasir" class="para">
+        Name: Nasir <br>
+        Age: 28
+    </p>
+    <p id="shishir" class="para">
+        Name: Shishir <br>
+        Age: 26
+    </p>
+    <script>
+        function showPerson(personName){
+            var person, para;
+            para = document.getElementsByClassName("para");
+            for(var i = 0; i<para.length;i++){
+                para[i].style.display="none";
+            }
+            person = document.getElementsByClassName("person");
+            for(var i=0; i<person.length; i++ ){
+                person[i].className = person[i].className.replace("active", "");
+            }
+            var x = document.getElementById(personName);
+            x.style.display="block";
+            var y = event.currentTarget.className;
+            y = y +"active";
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    .active, .btn:hover:hover {
+  background-color: #ccc; 
+}
+.para {
+  display: none;
+}
+  </style>
+  <div class="main">
+    <button class="btn">Person 1</button>
+    <div class="para">
+      <p>
+        Name: Nasir <br>
+        Age:28
+      </p>
+    </div>
+    <button class="btn">Person 2</button>
+    <div class="para">
+      <p>
+        Name: Nasir <br>
+        Age:28
+      </p>
+    </div>
+    <button class="btn">Person 3</button> 
+    <div class="para">
+      <p>
+        Name: Nasir <br>
+        Age:28
+      </p>
+    </div>
+  </div>
+  <script>
+    var person=document.getElementsByClassName("btn");
+      for(var i=0; i<person.length; i++){
+        person[i].addEventListener("click", function(){
+        this.classList.toggle("active");
+        var p = this.nextElementSibling;
+        if(p.style.display === "block"){
+          p.style.display = "none";
+        }
+        else{
+          p.style.display = "block";
+        }
+      })
+    }
+  </script>
+</body>
+</html>

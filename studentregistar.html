@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Register</title>
+    <style>
+        .main {
+            height: 100%;
+            width: 28%;
+            margin: auto;
+        }
+        h1 {
+            text-align: center;
+        }
+        #studentTable {
+            border: 1px solid black;
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 100%;
+            border: 1px solid #ddd;
+            margin-left: auto;
+            margin-right: auto;
+            }
+
+            .studentTable th, td {
+            text-align: center;
+            padding: 16px;
+            }
+
+            tr:nth-child(even) {
+            background-color: #f2f2f2;
+            }
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h1>Student Register</h1>
+    <input type="text" class="studentName" id="stname" placeholder="name">
+    <input type="number" class="studentName" id="stid" placeholder="id">
+    <button id="btn">Register</button>
+    <br>
+    <br>
+    <table id="studentTable">
+        <tr>
+            <td>Student Name</td>
+            <td>Student id</td>
+        </tr>
+
+    </table>
+    </div>
+    
+<script>
+    var btn = document.getElementById("btn");
+    btn.onclick = function(){
+        var row = document.createElement("tr");
+        // var tr = document.getElementsByTagName("tr");
+        // for(var i = 0; i<tr.length; i++){
+        //     tr[i].className = "tableRow";
+        // }
+        var input = document.getElementById("stname").value;
+        var text = document.createTextNode(input);
+        var inputId = document.getElementById("stid").value;
+        var id = document.createTextNode(inputId);
+        var dataName = document.createElement("td");
+        var dataid = document.createElement("td");
+        if(input === "" || inputId === ""){
+            alert("you must fill all the fields");
+        }
+        else{
+            var table = document.getElementById("studentTable");
+            var tableRow = table.appendChild(row);
+            var n = tableRow.appendChild(dataName);
+            var sid = tableRow.appendChild(dataid);
+            n.appendChild(text);
+            sid.appendChild(id);
+        }
+        document.getElementById("stname").value = "";
+        document.getElementById("stid").value = "";
+
+    }
+</script>
+</body>
+</html>
